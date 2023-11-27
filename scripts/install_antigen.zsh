@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 QUIET=false
-ANTIGEN_URL="https://cdn.jsdelivr.net/gh/zsh-users/antigen/antigen.zsh"
-INSTALL_LOCATION="$HOME/.dotfiles/antigen.zsh"
+ANTIGEN_URL="git.io/antigen"
+INSTALL_LOCATION="$HOME/dotfiles/antigen.zsh"
 
 # Process command line options
 while getopts ":q" opt; do
