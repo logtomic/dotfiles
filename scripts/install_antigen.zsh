@@ -2,7 +2,8 @@
 
 QUIET=false
 ANTIGEN_URL="git.io/antigen"
-INSTALL_LOCATION="$HOME/dotfiles/antigen.zsh"
+DOTFILES_DIR=${DOTFILES_DIR:-$HOME/dotfiles}
+INSTALL_LOCATION="$DOTFILES_DIR/antigen.zsh"
 
 # Process command line options
 while getopts ":q" opt; do
