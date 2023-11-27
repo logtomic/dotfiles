@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 QUIET=false
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR=${DOTFILES_DIR:-$HOME/dotfiles}
 NVM_DIR="$DOTFILES_DIR/nvm"
 
 # Process command line options
