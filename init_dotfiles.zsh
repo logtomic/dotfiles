@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-DOTFILES_DIR="$HOME/.dotfiles"
+export DOTFILES_DIR="$HOME/dotfiles"
 SCRIPTS_DIR="$DOTFILES_DIR/scripts"
 
 # Function to execute an installation script
