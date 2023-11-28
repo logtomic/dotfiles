@@ -6,6 +6,7 @@ antigen bundle jsontools
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle romkatv/zsh-defer
 antigen bundle ${DOTFILES_DIR:-$HOME/dotfiles}/themes emerald.zsh-theme --no-local-clone
 
 # THEME=pmcgee

@@ -17,10 +17,21 @@ while getopts ":q" opt; do
     esac
 done
 
+edit_zshrc() {
+    # LOCAL_ZSHRC="$DOTFILES_DIR/.zshrc"
+    echo "
+# NVM
+export NVM_DIR=\"\$DOTFILES_DIR/nvm\"
+[ -s \"\$NVM_DIR/nvm.sh\" ] && \. \"\$NVM_DIR/nvm.sh\"
+[ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion\"
+" >> $LOCAL_ZSHRC
+}
+
 # Check if NVM is already installed
 if [ -d "$NVM_DIR" ]; then
     if [ "$QUIET" = false ]; then
         echo "NVM is already installed."
+        edit_zshrc
     fi
 else
     # Create .dotfiles directory if it doesn't exist
@@ -33,6 +44,7 @@ else
     # Check if the installation was successful
     if [ $? -eq 0 ]; then
         echo "NVM has been successfully installed. Please restart your shell."
+        edit_zshrc
     else
         echo "Error: Failed to install NVM. Please install it manually."
         exit 1

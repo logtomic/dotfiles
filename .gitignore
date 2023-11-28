@@ -1,0 +1,6 @@
+/antigen
+/nvm
+*antigen-compat
+.antigenrc.zwc
+antigen.zsh
+.zshrc*
