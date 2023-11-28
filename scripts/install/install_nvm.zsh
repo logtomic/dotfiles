@@ -29,7 +29,7 @@ export NVM_DIR=\"\$DOTFILES_DIR/nvm\"
 # Check if NVM is already installed
 if [ -d "$NVM_DIR" ]; then
     if [ "$QUIET" = false ]; then
-        echo "NVM is already installed."
+        echo "nvm is already installed. "
         edit_zshrc
     fi
 else
@@ -42,7 +42,7 @@ else
 
     # Check if the installation was successful
     if [ $? -eq 0 ]; then
-        echo "NVM has been successfully installed. Please restart your shell."
+        echo "nvm has been successfully installed. "
         edit_zshrc
     else
         echo "Error: Failed to install NVM. Please install it manually."

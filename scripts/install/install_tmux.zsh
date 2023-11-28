@@ -18,7 +18,7 @@ done
 # Check if tmux is already installed
 if command -v tmux &> /dev/null; then
     if [ "$QUIET" = false ]; then
-        echo "tmux is already installed."
+        echo "tmux is already installed. "
     fi
 else
     # Check the package manager and install tmux
@@ -41,7 +41,7 @@ else
     # Check if the installation was successful
     if [ $? -eq 0 ]; then
         if [ "$QUIET" = false ]; then
-            echo "tmux has been successfully installed."
+            echo "tmux has been successfully installed. "
         fi
     else
         echo "Error: Failed to install tmux. Please install it manually."
