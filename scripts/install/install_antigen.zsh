@@ -30,7 +30,7 @@ antigen init \$DOTFILES_DIR/.antigenrc
 # Check if antigen is already installed
 if [ -f "$INSTALL_LOCATION" ]; then
     if [ "$QUIET" = false ]; then
-        echo "antigen is already installed."
+        echo "antigen is already installed. "
         edit_zshrc
     fi
 else
@@ -40,7 +40,7 @@ else
 
     # Check if the download was successful
     if [ $? -eq 0 ]; then
-        echo "antigen has been successfully installed."
+        echo "antigen has been successfully installed. "
         edit_zshrc
     else
         echo "Error: Failed to download antigen. Please install it manually."

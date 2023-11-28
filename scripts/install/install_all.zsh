@@ -10,7 +10,7 @@ install_script() {
     script_path="$INSTALL_SCRIPTS_DIR/$script_name"
 
     if [ -f "$script_path" ]; then
-        echo "Running $script_name..."
+        echo -n "Running $script_name..."
         chmod +x "$script_path"
         "$script_path"
     else

@@ -18,7 +18,7 @@ done
 # Check if fzf is already installed
 if command -v fzf &> /dev/null; then
     if [ "$QUIET" = false ]; then
-        echo "fzf is already installed."
+        echo "fzf is already installed. "
     fi
 else
     # Check the package manager and install fzf
@@ -36,7 +36,7 @@ else
 
     # Check if the installation was successful
     if [ $? -eq 0 ]; then
-        echo "fzf has been successfully installed."
+        echo "fzf has been successfully installed. "
     else
         echo "Error: Failed to install fzf. Please install it manually."
         exit 1
