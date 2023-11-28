@@ -19,7 +19,6 @@ while getopts ":q" opt; do
 done
 
 edit_zshrc() {
-    # LOCAL_ZSHRC="$DOTFILES_DIR/.zshrc"
     echo "
 # Antigen
 export ADOTDIR=\$DOTFILES_DIR/antigen

@@ -18,7 +18,6 @@ while getopts ":q" opt; do
 done
 
 edit_zshrc() {
-    # LOCAL_ZSHRC="$DOTFILES_DIR/.zshrc"
     echo "
 # NVM
 export NVM_DIR=\"\$DOTFILES_DIR/nvm\"
