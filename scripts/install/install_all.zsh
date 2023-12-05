@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 export DOTFILES_DIR="$HOME/dotfiles"
-export LOCAL_ZSHRC="$DOTFILES_DIR/.zshrc"
+export LOCAL_ZSHRC="$DOTFILES_DIR/.zshrc.local"
 INSTALL_SCRIPTS_DIR="$DOTFILES_DIR/scripts/install"
 
 # Function to execute an installation script
@@ -36,13 +36,12 @@ export EDITOR=\"\$VISUAL\"
 # Run installation scripts
 # (These will update the .zshrc file as necessary)
 install_script "install_antigen.zsh"
-install_script "install_fzf.zsh"
-install_script "install_nvm.zsh"
-install_script "install_tmux.zsh"
+# install_script "install_fzf.zsh"     # replaced by ripgrep
+# install_script "install_nvm.zsh"     # looking to install elsewhere
+# install_script "install_tmux.zsh"    # replaced by zellij
 echo "All installations complete."
 
-# If the source string isn't found in the user's home .zshrc,
-# prompt them to add it.
+# Prompt the user to source the local .zshrc file in their ~/.zshrc file
 HOME_ZSHRC="$HOME/.zshrc"
 LOCAL_ZSHRC="$DOTFILES_DIR/.zshrc"
 if [ ! -f "$HOME_ZSHRC" ]; then
