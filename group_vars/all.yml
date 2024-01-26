@@ -1,0 +1,6 @@
+default_roles:
+  - system # basic updates and upgrades
+  - rustup # install cargo for package installs
+git_user_name: "logtomic"
+# git_user_email: ""
+

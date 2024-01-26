@@ -1,0 +1,13 @@
+# Pulled directly from the url below and edited to fit my needs
+# https://github.com/TechDufus/dotfiles/blob/main/pre_tasks/powershell_executionpolicy.yml
+
+---
+- name: Configure Windows PowerShell ExecutionPolicy
+  ansible.builtin.shell: |
+    Set-ExecutionPolicy RemoteSigned -Force -Scope CurrentUser
+    $CurrentPolicy = Get-ExecutionPolicy
+    Write-Host ($CurrentPolicy -eq 'RemoteSigned')
+  register: ps_exec_result
+  changed_when: ps_exec_result.stdout != 'True'
+  args:
+    executable: powershell.exe
