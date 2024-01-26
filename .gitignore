@@ -4,3 +4,8 @@
 .antigenrc.zwc
 antigen.zsh
 .zshr*
+
+vault-password.txt
+/callback_plugins/__pycache__
+
+roles/neovim/files/lazy-lock.json
