@@ -1,10 +1,12 @@
 ---
-- name: Rustup | Install Rustup & Cargo
-  tasks:
-    - name: Run curl command
-      shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+- name: "Rustup | Install Rustup & Cargo"
+  ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  # tasks:
+  #   - name: Run curl command
+  #     shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-- name: Rustup | Update
-  tasks:
-    - name: Run rustup update command
-      shell: rustup update
+- name: "Rustup | Update"
+  ansible.builtin.shell: rustup update
+  # tasks:
+  #   - name: Run rustup update command
+  #     shell: rustup update
