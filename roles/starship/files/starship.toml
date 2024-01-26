@@ -1,0 +1,135 @@
+# ~/.config/starship.toml
+
+format = """
+$username$hostname $gcloud[|](bright-black) $directory$git_branch$git_status [|](bright-black) $all
+"""
+right_format = """$git_metrics$time"""
+
+
+[username]
+format = "[$user](bright-green)"
+show_always = true
+style_user = "bright-green"
+
+[hostname]
+format = '[@$hostname](bright-black)'
+ssh_only = false
+disabled = false
+
+[directory]
+format = '[$path](bold yellow)'
+read_only = " 󰊪"
+
+[git_branch]
+# symbol = "\\[\\]"
+symbol = " "
+format = " on [$symbol$branch(:$remote_branch)]($style)"
+style = "bold purple"
+
+[time]
+format = '[\[$time\]]($style)'
+use_12hr = true
+disabled = false
+style = "white"
+
+[cmd_duration]
+min_time = 5_000
+show_milliseconds = false
+format = "[$duration]($style) "
+style = "bright-green"
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+up_to_date = " ✓"
+modified = " [\\(󰷫\\)](yellow)"
+staged = " [\\(+\\)](bright-green)"
+format = "[$ahead_behind](bright-green)$all_status"
+
+[git_metrics]
+format = "[+$added]($added_style)/[-$deleted]($deleted_style) "
+disabled = false
+
+[gcloud]
+format = "[$symbol](bright-blue)"
+symbol = " "
+
+[aws]
+format = "[$symbol](#ffa400)"
+symbol = " "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
