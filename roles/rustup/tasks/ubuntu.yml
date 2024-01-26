@@ -1,12 +1,10 @@
 ---
 - name: Rustup | Install Rustup & Cargo
-  hosts: all
   tasks:
     - name: Run curl command
       shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 - name: Rustup | Update
-  hosts: all
   tasks:
     - name: Run rustup update command
       shell: rustup update
