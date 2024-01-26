@@ -38,5 +38,5 @@
 - name: ZSH | Copy zshrc
   ansible.builtin.copy:
     dest: "{{ ansible_user_dir }}/.zshrc"
-    src: "zshrc"
+    src: ".zshrc"
     mode: u=rwx,g=rx,o=rx

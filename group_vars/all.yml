@@ -1,6 +1,9 @@
 default_roles:
   - system # basic updates and upgrades
   - cargo # install cargo for package installs
+  - zsh
+  - starship
+  - zellij
 git_user_name: "logtomic"
 # git_user_email: ""
 
