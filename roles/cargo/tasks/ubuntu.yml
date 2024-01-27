@@ -2,7 +2,7 @@
 - name: "Check if Cargo is Installed"
   ansible.builtin.shell: command -v cargo
   register: cargo_exists
-  ignore_errors: yes
+  ignore_errors: true
 
 - name: "Download Installer"
   when: cargo_exists is failed

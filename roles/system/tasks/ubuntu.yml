@@ -1,9 +1,9 @@
 ---
 - name: "Update APT Repos and Upgrade APT Packages"
+  become: true
   ansible.builtin.apt:
     update_cache: true
     upgrade: full
     state: latest
     autoremove: true
     autoclean: true
-  become: true

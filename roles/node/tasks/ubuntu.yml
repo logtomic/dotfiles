@@ -1,0 +1,34 @@
+---
+- name: Setup Node
+  block:
+    - name: Check for nvm.sh
+      stat:
+        path: "~/.nvm/nvm.sh"
+      register: nvm_file
+      failed_when: not nvm_file.stat.exists
+
+    - name: Install nvm
+      ansible.builtin.shell: "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.7/install.sh | NVM_DIR=~/.nvm bash"
+      when: not nvm_file.stat.exists
+
+    - name: Update .zshrc
+      ansible.builtin.blockinfile:
+        block: |
+          # NVM
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+        path: "{{ ansible_user_dir }}/.zshrc"
+        state: present
+        create: true
+        insertafter: EOF
+
+    - name: Install versions
+      ansible.builtin.shell: . ~/.zshrc && nvm install {{item}}
+      args:
+        executable: /bin/bash
+        chdir: "$HOME"
+        creates: "$HOME/.nvm/versions/node/v{{item}}"
+      with_items:
+        - "--lts"
+        - "lts/gallium"

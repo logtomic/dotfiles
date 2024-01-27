@@ -2,7 +2,7 @@
 - name: "Check if Starship is Installed"
   ansible.builtin.shell: command -v starship
   register: starship_exists
-  ignore_errors: yes
+  ignore_errors: true
 
 - name: "Install Starship via Cargo"
   when: starship_exists is failed
