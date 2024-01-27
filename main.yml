@@ -5,6 +5,7 @@
 - name: DotFiles Config
   hosts: localhost
   connection: local
+  become: true
 
   pre_tasks:
     - name: Detect WSL

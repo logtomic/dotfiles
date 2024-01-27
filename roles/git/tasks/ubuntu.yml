@@ -1,0 +1,27 @@
+---
+- name: Setup git
+  block:
+    - name: GIT | Set init.defaultBranch
+      community.general.git_config:
+        name: init.defaultBranch
+        scope: global
+        value: main
+
+    - name: GIT | Set user.email
+      community.general.git_config:
+        name: user.email
+        scope: global
+        value: "{{ git_user_email }}"
+      no_log: true
+
+    - name: GIT | Set user.name
+      community.general.git_config:
+        name: user.name
+        scope: global
+        value: "{{ git_user_name }}"
+
+    # - name: GIT | Set user.signingkey
+    #   community.general.git_config:
+    #     name: user.signingkey
+    #     scope: global
+    #     value: "{{ ansible_user_dir }}/.ssh/id_ed25519.pub"

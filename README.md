@@ -13,7 +13,7 @@ Under construction! Currently moving all installation processes to ansible.
 When running from a cloned repo, run the following command to install all tools:
 
 ```bash
-ansible-playbook ~/dotfiles/main.yml --ask-become-pass
+ansible-playbook ~/dotfiles/main.yml --ask-become-pass --vault-password-file ~/.ansible-vault/vault.secret
 ```
 
 When running from a fresh Ubuntu install, run the following command to install all tools:
