@@ -12,7 +12,7 @@
       tags:
         - always
 
-    - name: Detect wsl
+    - name: Is WSL
       ansible.builtin.debug:
         var: ansible_host_environment_is_wsl
       tags:
@@ -59,3 +59,9 @@
       with_items: "{{ run_roles }}"
       tags:
         - always
+
+  post_tasks:
+    # - name: Source zshrc file
+    #   ansible.builtin.import_tasks: post_tasks/source_zshrc.yml
+    #   tags:
+    #     - always

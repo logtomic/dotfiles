@@ -1,0 +1,14 @@
+---
+- name: Setup fzf
+  block:
+    - name: Check for fzf
+      ansible.builtin.shell: command -v fzf
+      register: fzf_exists
+      ignore_errors: true
+
+    - name: "Install via APT"
+      ansible.builtin.apt:
+        name: fzf
+        state: present
+        update_cache: yes
+      when: fzf_exists is failed

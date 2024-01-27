@@ -1,11 +1,13 @@
 ---
-- name: "Check if Zellij is Installed"
-  ansible.builtin.shell: command -v zellij
-  register: zellij_exists
-  ignore_errors: yes
+- name: Setup zellij
+  block:
+    - name: Check for zellij
+      ansible.builtin.shell: command -v zellij
+      register: zellij_exists
+      ignore_errors: true
 
-- name: "Install Zellij via Cargo"
-  when: zellij_exists is failed
-  community.general.cargo:
-    name: zellij
-    state: latest
+    - name: "Install via Cargo"
+      when: zellij_exists is failed
+      community.general.cargo:
+        name: zellij
+        state: latest
