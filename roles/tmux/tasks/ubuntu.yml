@@ -1,12 +1,13 @@
 ---
 - name: Setup tmux
   block:
-    - name: Check for tmux
+    - name: TMUX | Check for tmux
       ansible.builtin.shell: command -v tmux
       register: tmux_exists
       ignore_errors: true
+      changed_when: false
 
-    - name: "Install via APT"
+    - name: TMUX | Install via APT
       ansible.builtin.apt:
         name: tmux
         state: present
