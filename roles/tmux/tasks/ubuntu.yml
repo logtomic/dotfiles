@@ -13,3 +13,20 @@
         state: present
         update_cache: yes
       when: tmux_exists is failed
+
+    - name: TMUX | Install TPM
+      ansible.builtin.git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+        depth: 1
+
+    - name: TMUX | Copy tmux.conf
+      ansible.builtin.copy:
+        src: tmux.conf
+        dest: "{{ ansible_user_dir }}/.tmux.conf"
+        mode: u=rwx,g=rx,o=rx
+
+    - name: TMUX | Source tmux config
+      ansible.builtin.shell: tmux source ~/.tmux.conf
+      ignore_errors: true
+      changed_when: false

@@ -1,0 +1,4 @@
+---
+- name: NOTIFY | Run tmux command
+  ansible.builtin.debug:
+    msg: "Enter TMUX and run 'C-s + I' to install plugins"
